@@ -17,3 +17,5 @@ C:\Users\Heinz Peter\Documents\Source\SunriseCef\CefSharpInListBox\CefSharpInLis
 C:\Users\Heinz Peter\Documents\Source\SunriseCef\CefSharpInListBox\CefSharpInListBox\obj\x64\Debug\CefSharpInListBox.csproj.GenerateResource.Cache
 C:\Users\Heinz Peter\Documents\Source\SunriseCef\CefSharpInListBox\CefSharpInListBox\obj\x64\Debug\CefSharpInListBox.exe
 C:\Users\Heinz Peter\Documents\Source\SunriseCef\CefSharpInListBox\CefSharpInListBox\obj\x64\Debug\CefSharpInListBox.pdb
+C:\Users\Heinz Peter\Documents\Source\SunriseCef\CefSharpInListBox\CefSharpInListBox\obj\x64\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\Heinz Peter\Documents\Source\SunriseCef\CefSharpInListBox\CefSharpInListBox\obj\x64\Debug\CefSharpInListBox_MarkupCompile.lref

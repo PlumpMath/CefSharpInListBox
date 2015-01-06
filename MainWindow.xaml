@@ -3,68 +3,52 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:wpf="clr-namespace:CefSharp.Wpf;assembly=CefSharp.Wpf"
         Title="MainWindow" Height="350" Width="525">
-    <Window.Resources>
-        <Style x:Key="TabControlStyle" TargetType="TabControl">
-            <Setter Property="Template">
-                <Setter.Value>
-                    <ControlTemplate TargetType="TabControl">
-                        <DockPanel>
-                            <TabPanel IsItemsHost="True"
+    <Grid>
+        <TabControl>
+            <TabItem Header="IExplorer">
+                <WebBrowser Source="http://www.google.com/" />
+            </TabItem>
+            <TabItem Header="Chrome">
+                <wpf:ChromiumWebBrowser Address="http://www.google.com/" />
+            </TabItem>
+            <Control.Template>
+                <ControlTemplate TargetType="TabControl">
+                    <DockPanel>
+                        <TabPanel IsItemsHost="True"
                               DockPanel.Dock="{TemplateBinding TabStripPlacement}" />
-                            <ListBox ItemsSource="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=Items}"
+                        <ListBox ItemsSource="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=Items}"
                              SelectedIndex="{TemplateBinding SelectedIndex}">
-                                <ItemsControl.ItemsPanel>
-                                    <ItemsPanelTemplate>
-                                        <Grid/>
-                                    </ItemsPanelTemplate>
-                                </ItemsControl.ItemsPanel>
-                                <ItemsControl.ItemContainerStyle>
-                                    <Style TargetType="ListBoxItem">
-                                        <Setter Property="Template">
-                                            <Setter.Value>
-                                                <ControlTemplate TargetType="ListBoxItem">
-                                                    <ContentPresenter Content="{Binding Content}"
+                            <ItemsControl.ItemsPanel>
+                                <ItemsPanelTemplate>
+                                    <Grid />
+                                </ItemsPanelTemplate>
+                            </ItemsControl.ItemsPanel>
+                            <ItemsControl.ItemContainerStyle>
+                                <Style TargetType="ListBoxItem">
+                                    <Setter Property="Template">
+                                        <Setter.Value>
+                                            <ControlTemplate TargetType="ListBoxItem">
+                                                <ContentPresenter Content="{Binding Content}"
                                                               ContentTemplate="{Binding ContentTemplate}"
                                                               ContentTemplateSelector="{Binding ContentTemplateSelector}" />
-                                                </ControlTemplate>
-                                            </Setter.Value>
-                                        </Setter>
-                                        <Setter Property="Visibility"
+                                            </ControlTemplate>
+                                        </Setter.Value>
+                                    </Setter>
+                                    <Setter Property="Visibility"
                                         Value="Hidden" />
-                                        <Style.Triggers>
-                                            <Trigger Property="IsSelected"
+                                    <Style.Triggers>
+                                        <Trigger Property="IsSelected"
                                              Value="True">
-                                                <Setter Property="Visibility"
+                                            <Setter Property="Visibility"
                                                 Value="Visible" />
-                                            </Trigger>
-                                        </Style.Triggers>
-                                    </Style>
-                                </ItemsControl.ItemContainerStyle>
-                            </ListBox>
-                        </DockPanel>
-                    </ControlTemplate>
-                </Setter.Value>
-            </Setter>
-        </Style>
-    </Window.Resources>
-
-    <Grid>
-        <TabControl Style="{StaticResource TabControlStyle}">
-            <TabItem Header="ItemName">
-                <wpf:ChromiumWebBrowser Address="http://www.google.com"/>
-            </TabItem>
-            <TabItem Header="ItemName">
-                <wpf:ChromiumWebBrowser Address="http://www.google.com"/>
-            </TabItem>
-            <TabItem Header="ItemName">
-                <wpf:ChromiumWebBrowser Address="http://www.google.com"/>
-            </TabItem>
-            <TabItem Header="ItemName">
-                <wpf:ChromiumWebBrowser Address="http://www.google.com"/>
-            </TabItem>
-            <TabItem Header="ItemName">
-                <wpf:ChromiumWebBrowser Address="http://www.google.com"/>
-            </TabItem>
+                                        </Trigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </ItemsControl.ItemContainerStyle>
+                        </ListBox>
+                    </DockPanel>
+                </ControlTemplate>
+            </Control.Template>
         </TabControl>
     </Grid>
 </Window>
